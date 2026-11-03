@@ -1,5 +1,9 @@
 # TSAI · 个人主页
 
+**线上地址：<https://mabaca123hsu.github.io/>** · 仓库：<https://github.com/mabaca123hsu/mabaca123hsu.github.io>
+
+由 GitHub Pages 从 `main` 分支根目录自动发布（每次 push 后约 30 秒重建）。
+
 一个**零依赖、零构建**的个人入口站：手写 HTML / CSS / JS，深浅双主题，托管在 GitHub Pages 上。
 
 站名 **TSAI**，主视觉用 TSAI 标志，三个平台入口贯穿全站：
