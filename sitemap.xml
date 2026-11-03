@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://tsai.xubi.org/</loc><priority>1.0</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://tsai.xubi.org/links.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://tsai.xubi.org/about.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://tsai.xubi.org/deploy.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mabaca123hsu.github.io/</loc><priority>1.0</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mabaca123hsu.github.io/links.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mabaca123hsu.github.io/about.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://mabaca123hsu.github.io/deploy.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
 </urlset>
