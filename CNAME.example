@@ -1,0 +1,10 @@
+# 自定义域名模板
+#
+# 用法（任选其一）：
+# 1) 在仓库 Settings → Pages → Custom domain 里填域名，GitHub 自动生成 CNAME 文件；
+# 2) 把本文件改名为 CNAME（去掉 .example），内容只写一行裸域名，不要 http://、不要路径。
+#
+# 注意：CNAME 必须出现在「发布目录」里。用 Actions 发布时，它要被打进 artifact，
+# 否则每次部署都会把它冲掉。用根目录发布时放根目录即可。
+
+www.example.com

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 · 页面不存在 · TSAI</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="页面不存在（404）。回到 TSAI 首页，或直接去 Telegram 群组、X、哔哩哔哩。">
+<meta name="theme-color" content="#2f6fed">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<script>
+  (function () {
+    document.documentElement.classList.add('js');
+    try {
+      var t = localStorage.getItem('tsai-theme');
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  })();
+</script>
+<style>
+  /* 404 页自包含样式：被任意深度的路径命中时也不依赖外部 CSS */
+  :root {
+    --bg: #fbfcfe; --surface: #fff; --text: #0c1424; --soft: #3b4a5f; --muted: #68768c;
+    --border: #e3e9f2; --brand: #2f6fed; --brand-2: #00a6a6; --brand-3: #7c3aed;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    color-scheme: light;
+  }
+  :root[data-theme="dark"] {
+    --bg: #070b14; --surface: #0e1626; --text: #e9effa; --soft: #b8c5d9; --muted: #8898b1;
+    --border: #1d2a42; --brand: #7aa8ff; --brand-2: #3ad8ca; --brand-3: #b18cff;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: grid; place-items: center;
+    padding: 40px 20px; font-family: var(--sans); color: var(--text); background: var(--bg);
+    background-image:
+      radial-gradient(760px 320px at 80% -10%, color-mix(in srgb, var(--brand) 18%, transparent), transparent 70%),
+      radial-gradient(620px 300px at 4% 112%, color-mix(in srgb, var(--brand-2) 15%, transparent), transparent 70%);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { text-align: center; max-width: 640px; width: 100%; }
+  .logo { width: 168px; height: auto; margin: 0 auto 26px; }
+  .logo img { width: 100%; height: auto; }
+  .logo .paper { display: none; }
+  :root[data-theme="dark"] .logo .ink { display: none; }
+  :root[data-theme="dark"] .logo .paper { display: block; }
+  .big {
+    font-family: var(--mono); font-size: clamp(4.5rem, 16vw, 9rem); font-weight: 800;
+    line-height: .95; letter-spacing: -.05em; margin-bottom: 10px;
+    background: linear-gradient(120deg, var(--brand), var(--brand-2) 58%, var(--brand-3));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  h1 { font-size: clamp(1.3rem, 1rem + 1.5vw, 1.8rem); margin: 0 0 12px; letter-spacing: -.02em; }
+  p { color: var(--soft); line-height: 1.75; margin: 0 auto 26px; max-width: 46ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; font-size: 14.5px;
+    font-weight: 700; border-radius: 11px; border: 1px solid var(--border); cursor: pointer;
+    color: var(--text); background: var(--surface); text-decoration: none; font-family: inherit;
+    transition: transform .12s, border-color .15s, color .15s, box-shadow .15s;
+  }
+  .btn:hover { transform: translateY(-1px); border-color: var(--brand); color: var(--brand); }
+  .btn.primary {
+    color: #fff; border-color: transparent;
+    background: linear-gradient(135deg, var(--brand), color-mix(in srgb, var(--brand) 58%, var(--brand-2)));
+    box-shadow: 0 12px 26px -14px var(--brand);
+  }
+  .btn.primary:hover { color: #fff; }
+  .hint {
+    margin-top: 34px; padding-top: 20px; border-top: 1px dashed var(--border);
+    font-size: 13px; color: var(--muted); line-height: 1.7;
+  }
+  code { font-family: var(--mono); font-size: .92em; color: var(--brand); }
+</style>
+</head>
+<body>
+  <main class="wrap" id="main">
+    <div class="logo" aria-hidden="true">
+      <img class="ink" src="assets/img/tsai-logo-ink.png" alt="">
+      <img class="paper" src="assets/img/tsai-logo-paper.png" alt="">
+    </div>
+    <div class="big">404</div>
+    <h1>这个地址上没有页面</h1>
+    <p>
+      链接可能过期、文件名大小写不符，或者发布源指错了目录。
+      回到首页重新找入口，三个平台链接在那边都齐。
+    </p>
+    <div class="row">
+      <a class="btn primary" href="index.html" data-path="index.html">回首页</a>
+      <a class="btn" href="links.html" data-path="links.html">全部链接</a>
+      <a class="btn" href="deploy.html" data-path="deploy.html">部署说明</a>
+    </div>
+    <p class="hint" style="border-top:0;padding-top:16px;margin-top:18px">
+      也可以直接去：
+      <a href="https://t.me/+PWWlJQZPd59jMzkx">Telegram 群组</a> ·
+      <a href="https://x.com/tsai1224?s=11">X</a> ·
+      <a href="https://b23.tv/YUPe5hf">哔哩哔哩</a>
+    </p>
+    <p class="hint">
+      建站笔记：<code>gh api repos/&lt;USER&gt;/&lt;REPO&gt;/pages --jq .source</code> —— 用它确认发布源指向的分支与目录。
+    </p>
+  </main>
+
+<script>
+  (function () {
+    /* 404 会被任意深度的路径命中：探测站点根，再修正相对链接与 logo */
+    var seg = location.pathname.split('/').filter(Boolean);
+    var roots = seg.length ? ['/' + seg[0] + '/', '/'] : ['/'];
+
+    function fix(root) {
+      document.querySelectorAll('[data-path]').forEach(function (a) {
+        a.setAttribute('href', root + a.getAttribute('data-path'));
+      });
+      document.querySelectorAll('.logo img').forEach(function (img) {
+        img.setAttribute('src', root + img.getAttribute('src').replace(/^\.?\/?/, ''));
+      });
+      var fav = document.querySelector('link[rel="icon"]');
+      if (fav) fav.setAttribute('href', root + 'assets/img/favicon.png');
+    }
+
+    (function next(i) {
+      if (i >= roots.length) { fix('/'); return; }
+      fetch(roots[i] + 'index.html', { method: 'HEAD' })
+        .then(function (r) { r.ok ? fix(roots[i]) : next(i + 1); })
+        .catch(function () { next(i + 1); });
+    })(0);
+  })();
+</script>
+</body>
+</html>

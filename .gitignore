@@ -1,0 +1,7 @@
+.DS_Store
+Thumbs.db
+*.log
+_t*.html
+_dbg.html
+.shots/
+
