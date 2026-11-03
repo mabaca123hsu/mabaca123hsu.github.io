@@ -1,21 +1,21 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>本站部署 · GitHub Pages 发布源 · TSAI</title>
-<meta name="description" content="TSAI 个人站的部署笔记：GitHub Pages 发布源配置（分支发布 / GitHub Actions）、权限、校验命令与 404 排查。">
+<title>鏈珯閮ㄧ讲 路 GitHub Pages 鍙戝竷婧?路 TSAI</title>
+<meta name="description" content="TSAI 涓汉绔欑殑閮ㄧ讲绗旇锛欸itHub Pages 鍙戝竷婧愰厤缃紙鍒嗘敮鍙戝竷 / GitHub Actions锛夈€佹潈闄愩€佹牎楠屽懡浠や笌 404 鎺掓煡銆?>
 <meta name="author" content="TSAI">
 <meta name="theme-color" content="#2f6fed">
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="canonical" href="https://mabaca123hsu.github.io/deploy.html">
-  <meta property="og:url" content="https://mabaca123hsu.github.io/deploy.html">
+  <link rel="canonical" href="https://tsai.xubi.org/deploy.html">
+  <meta property="og:url" content="https://tsai.xubi.org/deploy.html">
   <meta property="og:type" content="article">
-<meta property="og:title" content="本站部署 · GitHub Pages 发布源">
-<meta property="og:description" content="分支发布还是 Actions 发布？根目录还是 /docs？一页说清。">
-<meta property="og:image" content="https://mabaca123hsu.github.io/assets/img/og-cover.png">
+<meta property="og:title" content="鏈珯閮ㄧ讲 路 GitHub Pages 鍙戝竷婧?>
+<meta property="og:description" content="鍒嗘敮鍙戝竷杩樻槸 Actions 鍙戝竷锛熸牴鐩綍杩樻槸 /docs锛熶竴椤佃娓呫€?>
+<meta property="og:image" content="https://tsai.xubi.org/assets/img/og-cover.png">
 <script>
   (function () {
     document.documentElement.classList.add('js');
@@ -31,26 +31,26 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main">跳到正文</a>
+<a class="skip-link" href="#main">璺冲埌姝ｆ枃</a>
 
 <header class="topbar">
   <div class="wrap topbar-inner">
-    <a class="brand" href="index.html" aria-label="TSAI 首页">
+    <a class="brand" href="index.html" aria-label="TSAI 棣栭〉">
       <img class="logo-ink" src="assets/img/tsai-logo-ink.png" alt="TSAI" width="104" height="31">
       <img class="logo-paper" src="assets/img/tsai-logo-paper.png" alt="TSAI" width="104" height="31" aria-hidden="true">
     </a>
-    <nav class="nav" id="siteNav" aria-label="主导航">
-      <a href="index.html">首页</a>
-      <a href="links.html">链接</a>
-      <a href="about.html">关于</a>
-      <a href="deploy.html">部署</a>
+    <nav class="nav" id="siteNav" aria-label="涓诲鑸?>
+      <a href="index.html">棣栭〉</a>
+      <a href="links.html">閾炬帴</a>
+      <a href="about.html">鍏充簬</a>
+      <a href="deploy.html">閮ㄧ讲</a>
     </nav>
     <div class="topbar-right">
-      <a class="btn btn-primary btn-sm" href="https://t.me/+PWWlJQZPd59jMzkx" target="_blank" rel="noopener">加入 Telegram 群组 ↗</a>
-      <button class="icon-btn nav-toggle" id="navToggle" aria-label="打开导航" aria-expanded="false" aria-controls="siteNav">
+      <a class="btn btn-primary btn-sm" href="https://t.me/+PWWlJQZPd59jMzkx" target="_blank" rel="noopener">鍔犲叆 Telegram 缇ょ粍 鈫?/a>
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="鎵撳紑瀵艰埅" aria-expanded="false" aria-controls="siteNav">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
-      <button class="icon-btn" id="themeToggle" aria-label="切换深色 / 浅色主题">
+      <button class="icon-btn" id="themeToggle" aria-label="鍒囨崲娣辫壊 / 娴呰壊涓婚">
         <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
         <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8z"/></svg>
       </button>
@@ -64,42 +64,40 @@
     <div class="wrap">
       <div class="sec-head" style="max-width:72ch">
         <span class="kicker">Deploy</span>
-        <h2>本站是怎么上线的</h2>
+        <h2>鏈珯鏄€庝箞涓婄嚎鐨?/h2>
         <p>
-          这个站没有服务器，全部托管在 GitHub Pages 上。发布源只有两种选法：
-          <strong>从一个分支发布</strong>，或者<strong>用 GitHub Actions 发布</strong>。下面是两种方式的完整步骤。
-        </p>
+          杩欎釜绔欐病鏈夋湇鍔″櫒锛屽叏閮ㄦ墭绠″湪 GitHub Pages 涓娿€傚彂甯冩簮鍙湁涓ょ閫夋硶锛?          <strong>浠庝竴涓垎鏀彂甯?/strong>锛屾垨鑰?strong>鐢?GitHub Actions 鍙戝竷</strong>銆備笅闈㈡槸涓ょ鏂瑰紡鐨勫畬鏁存楠ゃ€?        </p>
       </div>
 
       <div class="note">
-        <p><strong>发布源（publishing source）</strong>是 Pages 唯一认的入口：一个分支 + 该分支里的目录（<code>/</code> 或 <code>/docs</code>），
-        或者一条上传构建产物的 workflow。指错了，站点就是干净的 404。</p>
+        <p><strong>鍙戝竷婧愶紙publishing source锛?/strong>鏄?Pages 鍞竴璁ょ殑鍏ュ彛锛氫竴涓垎鏀?+ 璇ュ垎鏀噷鐨勭洰褰曪紙<code>/</code> 鎴?<code>/docs</code>锛夛紝
+        鎴栬€呬竴鏉′笂浼犳瀯寤轰骇鐗╃殑 workflow銆傛寚閿欎簡锛岀珯鐐瑰氨鏄共鍑€鐨?404銆?/p>
       </div>
 
-      <h3 id="branch" style="font-size:1.15rem;margin:34px 0 12px">方式 A · 从分支发布（最快）</h3>
+      <h3 id="branch" style="font-size:1.15rem;margin:34px 0 12px">鏂瑰紡 A 路 浠庡垎鏀彂甯冿紙鏈€蹇級</h3>
       <ol class="steps">
         <li>
-          <h3>把站点推到仓库</h3>
-          <p>本目录就是站点根目录，<code>index.html</code> 在最外层。推送后远端才有内容可发布。</p>
+          <h3>鎶婄珯鐐规帹鍒颁粨搴?/h3>
+          <p>鏈洰褰曞氨鏄珯鐐规牴鐩綍锛?code>index.html</code> 鍦ㄦ渶澶栧眰銆傛帹閫佸悗杩滅鎵嶆湁鍐呭鍙彂甯冦€?/p>
         </li>
         <li>
-          <h3>打开 Pages 设置</h3>
-          <p>仓库 <strong>Settings → Pages → Build and deployment</strong>，Source 选 <code>Deploy from a branch</code>。</p>
+          <h3>鎵撳紑 Pages 璁剧疆</h3>
+          <p>浠撳簱 <strong>Settings 鈫?Pages 鈫?Build and deployment</strong>锛孲ource 閫?<code>Deploy from a branch</code>銆?/p>
         </li>
         <li>
-          <h3>选分支与目录</h3>
-          <p>Branch 选 <code>main</code>，目录选 <code>/ (root)</code>，点 <strong>Save</strong>。若站点放在 <code>docs/</code>，目录改成 <code>/docs</code>。</p>
+          <h3>閫夊垎鏀笌鐩綍</h3>
+          <p>Branch 閫?<code>main</code>锛岀洰褰曢€?<code>/ (root)</code>锛岀偣 <strong>Save</strong>銆傝嫢绔欑偣鏀惧湪 <code>docs/</code>锛岀洰褰曟敼鎴?<code>/docs</code>銆?/p>
         </li>
         <li>
-          <h3>等一次构建</h3>
-          <p>Actions 里名为 <code>pages build and deployment</code> 的运行全绿后，访问 <code>https://&lt;用户名&gt;.github.io/&lt;仓库名&gt;/</code>。</p>
+          <h3>绛変竴娆℃瀯寤?/h3>
+          <p>Actions 閲屽悕涓?<code>pages build and deployment</code> 鐨勮繍琛屽叏缁垮悗锛岃闂?<code>https://&lt;鐢ㄦ埛鍚?gt;.github.io/&lt;浠撳簱鍚?gt;/</code>銆?/p>
         </li>
       </ol>
 
       <div class="code">
         <div class="code-bar">
-          <span class="code-title">bash · 推送</span>
-          <button class="copy" type="button">复制</button>
+          <span class="code-title">bash 路 鎺ㄩ€?/span>
+          <button class="copy" type="button">澶嶅埗</button>
         </div>
         <pre><code>git init
 git add -A
@@ -108,27 +106,25 @@ git branch -M main
 git remote add origin https://github.com/&lt;USER&gt;/&lt;REPO&gt;.git
 git push -u origin main
 
-<span class="c"># 之后：Settings → Pages → Deploy from a branch → main / (root)</span></code></pre>
+<span class="c"># 涔嬪悗锛歋ettings 鈫?Pages 鈫?Deploy from a branch 鈫?main / (root)</span></code></pre>
       </div>
 
       <div class="note">
-        <p><strong>要不要 <code>.nojekyll</code>：</strong>本仓库带了一个空的 <code>.nojekyll</code>，用来关掉 Jekyll 处理，
-        这样以 <code>_</code> 开头的文件/目录不会被静默丢掉。<code>.nojekyll</code> 必须放在发布目录里。</p>
+        <p><strong>瑕佷笉瑕?<code>.nojekyll</code>锛?/strong>鏈粨搴撳甫浜嗕竴涓┖鐨?<code>.nojekyll</code>锛岀敤鏉ュ叧鎺?Jekyll 澶勭悊锛?        杩欐牱浠?<code>_</code> 寮€澶寸殑鏂囦欢/鐩綍涓嶄細琚潤榛樹涪鎺夈€?code>.nojekyll</code> 蹇呴』鏀惧湪鍙戝竷鐩綍閲屻€?/p>
       </div>
 
-      <h3 id="actions" style="font-size:1.15rem;margin:38px 0 12px">方式 B · 用 GitHub Actions 发布</h3>
+      <h3 id="actions" style="font-size:1.15rem;margin:38px 0 12px">鏂瑰紡 B 路 鐢?GitHub Actions 鍙戝竷</h3>
       <p style="color:var(--muted);max-width:72ch">
-        仓库里已经带了 <code>.github/workflows/pages.yml</code>。启用顺序是：<strong>先把 Source 改成 GitHub Actions，再推送</strong>，否则部署会找不到站点。
-      </p>
+        浠撳簱閲屽凡缁忓甫浜?<code>.github/workflows/pages.yml</code>銆傚惎鐢ㄩ『搴忔槸锛?strong>鍏堟妸 Source 鏀规垚 GitHub Actions锛屽啀鎺ㄩ€?/strong>锛屽惁鍒欓儴缃蹭細鎵句笉鍒扮珯鐐广€?      </p>
 
       <div class="table-wrap">
         <table>
-          <thead><tr><th>配置项</th><th>值</th><th>缺了会怎样</th></tr></thead>
+          <thead><tr><th>閰嶇疆椤?/th><th>鍊?/th><th>缂轰簡浼氭€庢牱</th></tr></thead>
           <tbody>
-            <tr><td><code>permissions.pages</code></td><td><code>write</code></td><td>部署阶段 403</td></tr>
-            <tr><td><code>permissions.id-token</code></td><td><code>write</code></td><td>报 <code>Get Pages site failed</code></td></tr>
-            <tr><td><code>environment.name</code></td><td><code>github-pages</code></td><td>部署被拒 / 拿不到 URL</td></tr>
-            <tr><td><code>upload-pages-artifact.path</code></td><td>站点目录，如 <code>.</code> 或 <code>dist</code></td><td>上传空包，线上 404</td></tr>
+            <tr><td><code>permissions.pages</code></td><td><code>write</code></td><td>閮ㄧ讲闃舵 403</td></tr>
+            <tr><td><code>permissions.id-token</code></td><td><code>write</code></td><td>鎶?<code>Get Pages site failed</code></td></tr>
+            <tr><td><code>environment.name</code></td><td><code>github-pages</code></td><td>閮ㄧ讲琚嫆 / 鎷夸笉鍒?URL</td></tr>
+            <tr><td><code>upload-pages-artifact.path</code></td><td>绔欑偣鐩綍锛屽 <code>.</code> 鎴?<code>dist</code></td><td>涓婁紶绌哄寘锛岀嚎涓?404</td></tr>
           </tbody>
         </table>
       </div>
@@ -136,7 +132,7 @@ git push -u origin main
       <div class="code">
         <div class="code-bar">
           <span class="code-title">.github/workflows/pages.yml</span>
-          <button class="copy" type="button">复制</button>
+          <button class="copy" type="button">澶嶅埗</button>
         </div>
         <pre><code>name: Deploy to GitHub Pages
 
@@ -162,7 +158,7 @@ jobs:
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .          <span class="c"># 有构建产物时改成 dist / build / site</span>
+          path: .          <span class="c"># 鏈夋瀯寤轰骇鐗╂椂鏀规垚 dist / build / site</span>
 
   deploy:
     needs: build
@@ -175,42 +171,42 @@ jobs:
         uses: actions/deploy-pages@v4</code></pre>
       </div>
 
-      <h3 style="font-size:1.15rem;margin:38px 0 12px">上线后自检</h3>
+      <h3 style="font-size:1.15rem;margin:38px 0 12px">涓婄嚎鍚庤嚜妫€</h3>
       <div class="code">
         <div class="code-bar">
           <span class="code-title">bash</span>
-          <button class="copy" type="button">复制</button>
+          <button class="copy" type="button">澶嶅埗</button>
         </div>
-        <pre><code><span class="c"># 当前发布源（最权威，比设置页更可信）</span>
+        <pre><code><span class="c"># 褰撳墠鍙戝竷婧愶紙鏈€鏉冨▉锛屾瘮璁剧疆椤垫洿鍙俊锛?/span>
 gh api repos/&lt;USER&gt;/&lt;REPO&gt;/pages --jq '{html_url, status, source}'
 
-<span class="c"># 首页状态码</span>
+<span class="c"># 棣栭〉鐘舵€佺爜</span>
 curl -s -o /dev/null -w '%{http_code}\n' https://&lt;USER&gt;.github.io/&lt;REPO&gt;/
 
-<span class="c"># 最近一次构建结果</span>
+<span class="c"># 鏈€杩戜竴娆℃瀯寤虹粨鏋?/span>
 gh api repos/&lt;USER&gt;/&lt;REPO&gt;/pages/builds/latest --jq '{status, error}'
 
-<span class="c"># 本地预览（模拟静态目录行为）</span>
+<span class="c"># 鏈湴棰勮锛堟ā鎷熼潤鎬佺洰褰曡涓猴級</span>
 python -m http.server 8080 --directory .</code></pre>
       </div>
 
-      <h3 style="font-size:1.15rem;margin:38px 0 12px">常见 404 对照</h3>
+      <h3 style="font-size:1.15rem;margin:38px 0 12px">甯歌 404 瀵圭収</h3>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>症状</th><th>原因</th><th>修法</th></tr></thead>
+          <thead><tr><th>鐥囩姸</th><th>鍘熷洜</th><th>淇硶</th></tr></thead>
           <tbody>
-            <tr><td>整站 404</td><td>发布源目录里没有 <code>index.html</code></td><td>把入口文件挪到发布目录，或改发布源</td></tr>
-            <tr><td>只有样式丢失</td><td>资源用了绝对路径 <code>/assets/…</code></td><td>改相对路径；项目主页记得加 <code>/仓库名/</code> 前缀</td></tr>
-            <tr><td>子页面正常、首页 404</td><td>目录选项选成了 <code>/docs</code>，文件却在根目录</td><td>改回 <code>/ (root)</code></td></tr>
-            <tr><td>改了文件不更新</td><td>推错分支 / CDN 缓存 / 构建未触发</td><td>看 Actions 是否跑过；加随机参数验证</td></tr>
-            <tr><td>大小写问题</td><td>Linux 构建端区分大小写</td><td>统一小写文件名</td></tr>
+            <tr><td>鏁寸珯 404</td><td>鍙戝竷婧愮洰褰曢噷娌℃湁 <code>index.html</code></td><td>鎶婂叆鍙ｆ枃浠舵尓鍒板彂甯冪洰褰曪紝鎴栨敼鍙戝竷婧?/td></tr>
+            <tr><td>鍙湁鏍峰紡涓㈠け</td><td>璧勬簮鐢ㄤ簡缁濆璺緞 <code>/assets/鈥?/code></td><td>鏀圭浉瀵硅矾寰勶紱椤圭洰涓婚〉璁板緱鍔?<code>/浠撳簱鍚?</code> 鍓嶇紑</td></tr>
+            <tr><td>瀛愰〉闈㈡甯搞€侀椤?404</td><td>鐩綍閫夐」閫夋垚浜?<code>/docs</code>锛屾枃浠跺嵈鍦ㄦ牴鐩綍</td><td>鏀瑰洖 <code>/ (root)</code></td></tr>
+            <tr><td>鏀逛簡鏂囦欢涓嶆洿鏂?/td><td>鎺ㄩ敊鍒嗘敮 / CDN 缂撳瓨 / 鏋勫缓鏈Е鍙?/td><td>鐪?Actions 鏄惁璺戣繃锛涘姞闅忔満鍙傛暟楠岃瘉</td></tr>
+            <tr><td>澶у皬鍐欓棶棰?/td><td>Linux 鏋勫缓绔尯鍒嗗ぇ灏忓啓</td><td>缁熶竴灏忓啓鏂囦欢鍚?/td></tr>
           </tbody>
         </table>
       </div>
 
       <div class="hero-actions" style="margin-top:30px">
-        <a class="btn btn-primary" href="https://docs.github.com/zh/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site" target="_blank" rel="noopener">官方：配置发布源 ↗</a>
-        <a class="btn btn-ghost" href="index.html">回首页</a>
+        <a class="btn btn-primary" href="https://docs.github.com/zh/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site" target="_blank" rel="noopener">瀹樻柟锛氶厤缃彂甯冩簮 鈫?/a>
+        <a class="btn btn-ghost" href="index.html">鍥為椤?/a>
       </div>
     </div>
   </section>
@@ -221,33 +217,33 @@ python -m http.server 8080 --directory .</code></pre>
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a class="brand" href="index.html" aria-label="TSAI 首页">
+        <a class="brand" href="index.html" aria-label="TSAI 棣栭〉">
           <img class="logo-ink" src="assets/img/tsai-logo-ink.png" alt="TSAI" width="92" height="27">
           <img class="logo-paper" src="assets/img/tsai-logo-paper.png" alt="TSAI" width="92" height="27" aria-hidden="true">
         </a>
-        <p>TSAI 的个人入口页。纯静态站点，托管于 GitHub Pages。</p>
+        <p>TSAI 鐨勪釜浜哄叆鍙ｉ〉銆傜函闈欐€佺珯鐐癸紝鎵樼浜?GitHub Pages銆?/p>
       </div>
       <div>
-        <h4>页面</h4>
+        <h4>椤甸潰</h4>
         <ul>
-          <li><a href="index.html">首页</a></li>
-          <li><a href="links.html">链接</a></li>
-          <li><a href="about.html">关于</a></li>
-          <li><a href="deploy.html">部署</a></li>
+          <li><a href="index.html">棣栭〉</a></li>
+          <li><a href="links.html">閾炬帴</a></li>
+          <li><a href="about.html">鍏充簬</a></li>
+          <li><a href="deploy.html">閮ㄧ讲</a></li>
         </ul>
       </div>
       <div>
-        <h4>找到我</h4>
+        <h4>鎵惧埌鎴?/h4>
         <ul>
-          <li><a href="https://t.me/+PWWlJQZPd59jMzkx" target="_blank" rel="noopener">Telegram 群组 ↗</a></li>
-          <li><a href="https://x.com/tsai1224?s=11" target="_blank" rel="noopener">X / @tsai1224 ↗</a></li>
-          <li><a href="https://b23.tv/YUPe5hf" target="_blank" rel="noopener">哔哩哔哩 ↗</a></li>
+          <li><a href="https://t.me/+PWWlJQZPd59jMzkx" target="_blank" rel="noopener">Telegram 缇ょ粍 鈫?/a></li>
+          <li><a href="https://x.com/tsai1224?s=11" target="_blank" rel="noopener">X / @tsai1224 鈫?/a></li>
+          <li><a href="https://b23.tv/YUPe5hf" target="_blank" rel="noopener">鍝斿摡鍝斿摡 鈫?/a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> TSAI</span>
-      <span>无 Cookie · 无统计 · 无第三方脚本</span>
+      <span>漏 <span data-year>2026</span> TSAI</span>
+      <span>鏃?Cookie 路 鏃犵粺璁?路 鏃犵涓夋柟鑴氭湰</span>
       <span>Plain HTML / CSS / JS</span>
     </div>
   </div>
