@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# 部署后把下面一行换成本站真实地址再提交
-Sitemap: https://USERNAME.github.io/REPO/sitemap.xml
+Sitemap: https://mabaca123hsu.github.io/sitemap.xml
