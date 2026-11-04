@@ -1,6 +1,6 @@
 # TSAI · 个人主页
 
-**线上地址：<https://tsai.cloud-ip.cc/>** · 仓库：<https://github.com/mabaca123hsu/mabaca123hsu.github.io>
+**线上地址：<https://mabaca123hsu.github.io/>** · 仓库：<https://github.com/mabaca123hsu/mabaca123hsu.github.io>
 
 由 GitHub Pages 从 `main` 分支根目录自动发布（每次 push 后约 30 秒重建）。
 

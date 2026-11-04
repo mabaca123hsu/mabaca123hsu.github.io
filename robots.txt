@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tsai.cloud-ip.cc/sitemap.xml
+Sitemap: https://mabaca123hsu.github.io/sitemap.xml
