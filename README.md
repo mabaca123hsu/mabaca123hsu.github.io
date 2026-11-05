@@ -10,7 +10,7 @@
 
 | 平台 | 链接 |
 | --- | --- |
-| Telegram 群组（主阵地） | https://t.me/+5ZhT1T57wfEyMTcx |
+| Telegram 群组（主阵地） | https://t.me/+j_bf9FLIfSw4NDVh |
 | X | https://x.com/tsai1224?s=11 |
 | 哔哩哔哩 | https://b23.tv/YUPe5hf |
 
@@ -116,7 +116,7 @@ gh api repos/<USER>/<REPO>/pages/builds/latest --jq '{status, error}'
 | 想改什么 | 改哪里 |
 | --- | --- |
 | 名字 / 标语 | `index.html` 的 `<h1>`（换成自己的 logo 图）、`.tagline`、`.sub` |
-| 三个平台链接 | 全站搜 `t.me/+5ZhT1T57wfEyMTcx`、`x.com/tsai1224`、`b23.tv/YUPe5hf` 批量替换 |
+| 三个平台链接 | 全站搜 `t.me/+j_bf9FLIfSw4NDVh`、`x.com/tsai1224`、`b23.tv/YUPe5hf` 批量替换 |
 | 主色 | `assets/css/style.css` 里的 `--brand` / `--brand-2` / `--brand-3`，以及 `--tg` / `--x` / `--bili` |
 | 标志 | 替换 `assets/img/` 下的四张图（用 `prepare_logo.py` 可以重新生成） |
 | 分享图 | `assets/img/og-cover.png` |
